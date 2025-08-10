@@ -1,4 +1,4 @@
-# GenAI LLM Testing Project (Ollama + DeepEval + LangChain )
+# GenAI LLM Testing Project with Ollama, DeepEval and LangChain 
 
 The project demonstrates GenAI testing - evaluating Large Language Model outputs using automated metrics.
 
