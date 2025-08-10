@@ -4,7 +4,7 @@ The project demonstrates GenAI testing - evaluating Large Language Model outputs
 
 It uses a local model served by Ollama with LangChain as the interface and DeepEval to run automated checks.
 
-This is a small project allows you can run locally: 
+This is a small project you can run on your computer. It allows you to:
 - connect to a language model using LangChain and Ollama
 - send some sample questions or prompts to the model
 - automatically score the model’s answers using built-in metrics
