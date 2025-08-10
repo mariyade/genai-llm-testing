@@ -1,14 +1,14 @@
-# GenAI LLM Testing Project with Ollama, DeepEval and LangChain 
+# GenAI LLM Testing Project (Ollama + DeepEval + LangChain )
 
 The project demonstrates GenAI testing - evaluating Large Language Model outputs using automated metrics.
 
 It uses a local model served by Ollama with LangChain as the interface and DeepEval to run automated checks.
 
-It's a designed as a minimum, job-ready example that can be run locally to:
-- Connect to a LLM via LangChain and Ollama
-- Run predefined prompts
-- Score responses and automated metrics
-- Use Golden datasets to validate answers against expected outputs
+This is a small project allows you can run locally: 
+- connect to a language model using LangChain and Ollama
+- send some sample questions or prompts to the model
+- automatically score the model’s answers using built-in metrics
+- check answers against a “Golden” dataset to see if they match
 
 ---
 
