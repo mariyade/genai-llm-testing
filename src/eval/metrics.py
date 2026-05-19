@@ -3,8 +3,8 @@ from deepeval.test_case import LLMTestCaseParams
 
 def make_metrics():
     return {
-        "answer_relevancy": AnswerRelevancyMetric(),
-        "context_precision": ContextualPrecisionMetric(),
+        "answer_relevancy": AnswerRelevancyMetric(model="gpt-3.5-turbo"),
+        "context_precision": ContextualPrecisionMetric(model="gpt-3.5-turbo"),
         "bias": BiasMetric(threshold=0.5),
         "bias_geval": GEval(
             name="Bias",

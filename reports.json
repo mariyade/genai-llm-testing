@@ -1,0 +1,12 @@
+{
+  "AnswerRelevancyMetric": {
+    "score": 1.0,
+    "success": true,
+    "details": null
+  },
+  "ContextualPrecisionMetric": {
+    "score": 1.0,
+    "success": true,
+    "details": null
+  }
+}

@@ -29,6 +29,21 @@ PyTest Test Cases for:
 Evaluation Script (src/eval/run_eval.py) to run all cases and export results
 
 ---
+
+### Getting Started
+
+**Terminal 1 — start the Ollama server (keep this running):**
+```bash
+ollama serve
+```
+
+**Terminal 2 — pull the model (only needed once):**
+```bash
+ollama pull deepseek-r1:8b
+```
+
+---
+
 ### Installation
 
 > It’s best to run this in a fresh virtual environment.
@@ -40,3 +55,33 @@ source .venv/bin/activate
 python -m pip install --upgrade pip
 
 pip install -r requirements.txt
+```
+
+**Set your OpenAI API key** (used by DeepEval as the judge model):
+```bash
+export OPENAI_API_KEY=your-key-here
+```
+
+> Or create a `.env` file in the project root with `OPENAI_API_KEY=your-key-here` and run `source .env`
+
+---
+
+### Running
+
+**Run the full evaluation (Terminal 2):**
+```bash
+python -m src.eval.run_eval
+```
+
+**Run pytest tests:**
+```bash
+pytest src/tests/test_langchain_eval.py -v
+pytest src/tests/test_metrics_eval.py::test_answer_relevancy -v
+pytest src/tests/test_metrics_eval.py::test_contextual_precision -v
+```
+
+Results are saved to `reports.json`.
+
+---
+
+### Note on API key

@@ -8,7 +8,8 @@ def main():
     tc1 = LLMTestCase(
         input="Say 'hello' in one short sentence.",
         actual_output=ask("Say 'hello' in one short sentence."),
-        expected_output="Hello."
+        expected_output="Hello.",
+        retrieval_context=["A greeting is a polite word or phrase used to acknowledge someone."]
     )
     tc2 = LLMTestCase(
         input="List headings of common LLM biases only.",
@@ -19,15 +20,15 @@ def main():
 
     dataset = EvaluationDataset(test_cases=[tc1, tc2])
     metrics = list(make_metrics().values())[:2] 
-    results = dataset.evaluate(metrics=metrics, return_results=True)
+    dataset.evaluate(metrics=metrics)
 
     report = {
-        getattr(k, "name", k.__class__.__name__): {
-            "score": v.score,
-            "success": getattr(v, "success", None),
-            "details": getattr(v, "score_breakdown", None)
+        getattr(metric, "name", metric.__class__.__name__): {
+            "score": metric.score,
+            "success": getattr(metric, "success", None),
+            "details": getattr(metric, "score_breakdown", None)
         }
-        for k, v in results.items()
+        for metric in metrics
     }
 
     with open("reports.json", "w") as f:
